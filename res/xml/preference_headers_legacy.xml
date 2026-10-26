@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceScreen android:icon="@drawable/ic_settings_video" android:title="@string/video_settings" android:key="videoSettings">
+        <intent android:targetPackage="com.fastemulator.gba" android:action="video" android:targetClass="com.fastemulator.gba.settings.EmulatorSettings" />
+    </PreferenceScreen>
+    <PreferenceScreen android:icon="@drawable/ic_settings_audio" android:title="@string/audio_settings">
+        <intent android:targetPackage="com.fastemulator.gba" android:action="audio" android:targetClass="com.fastemulator.gba.settings.EmulatorSettings" />
+    </PreferenceScreen>
+    <PreferenceScreen android:icon="@drawable/ic_settings_input" android:title="@string/input_settings">
+        <intent android:targetPackage="com.fastemulator.gba" android:action="input" android:targetClass="com.fastemulator.gba.settings.EmulatorSettings" />
+    </PreferenceScreen>
+    <PreferenceScreen android:icon="@drawable/ic_settings_layout" android:title="@string/screen_layouts" android:key="screenLayouts">
+        <intent android:targetPackage="com.fastemulator.gba" android:targetClass="com.fastemulator.gba.settings.LayoutsActivity" />
+    </PreferenceScreen>
+    <PreferenceScreen android:icon="@drawable/ic_settings_misc" android:title="@string/misc_settings" android:key="miscSettings">
+        <intent android:targetPackage="com.fastemulator.gba" android:action="misc" android:targetClass="com.fastemulator.gba.settings.EmulatorSettings" />
+    </PreferenceScreen>
+    <PreferenceScreen android:icon="@drawable/ic_settings_advanced" android:title="@string/advanced_settings">
+        <intent android:targetPackage="com.fastemulator.gba" android:action="advanced" android:targetClass="com.fastemulator.gba.settings.EmulatorSettings" />
+    </PreferenceScreen>
+    <PreferenceScreen android:icon="@drawable/ic_settings_about" android:title="@string/about_settings" android:key="appAbout">
+        <intent android:targetPackage="com.fastemulator.gba" android:action="about" android:targetClass="com.fastemulator.gba.settings.EmulatorSettings" />
+    </PreferenceScreen>
+</PreferenceScreen>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <header android:icon="@drawable/ic_settings_video" android:title="@string/video_settings">
+        <extra android:name="settings" android:value="video" />
+    </header>
+    <header android:icon="@drawable/ic_settings_audio" android:title="@string/audio_settings">
+        <extra android:name="settings" android:value="audio" />
+    </header>
+    <header android:icon="@drawable/ic_settings_input" android:title="@string/input_settings">
+        <extra android:name="settings" android:value="input" />
+    </header>
+    <header android:icon="@drawable/ic_settings_layout" android:title="@string/screen_layouts">
+        <intent android:targetPackage="com.fastemulator.gba" android:targetClass="com.fastemulator.gba.settings.LayoutsActivity" />
+    </header>
+    <header android:icon="@drawable/ic_settings_misc" android:title="@string/misc_settings">
+        <extra android:name="settings" android:value="misc" />
+    </header>
+    <header android:icon="@drawable/ic_settings_advanced" android:title="@string/advanced_settings">
+        <extra android:name="settings" android:value="advanced" />
+    </header>
+    <header android:icon="@drawable/ic_settings_about" android:title="@string/about_settings" />
+</preference-headers>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:emu="http://schemas.fastemulator.com/emu">
+    <PreferenceScreen android:title="@string/key_mappings" android:key="keyMappings" android:summary="@string/key_mappings_summary" />
+    <PreferenceScreen android:title="@string/keymapping_profiles" android:key="keyMappingProfiles" android:summary="@string/keymapping_profiles_summary" />
+    <CheckBoxPreference android:title="@string/enable_vkeypad" android:key="enableVKeypad" android:defaultValue="true" />
+    <PreferenceScreen android:title="@string/vkeypad_settings" android:key="vkeypad" android:summary="@string/vkeypad_settings_summary" android:dependency="enableVKeypad" android:fragment="com.fastemulator.gba.settings.EmulatorSettings$VKeypadFragment" />
+    <PreferenceScreen android:title="@string/cart_features" android:key="cartfeatures" android:summary="@string/cart_features_summary" android:fragment="com.fastemulator.gba.settings.EmulatorSettings$CartFeaturesFragment" />
+    <ListPreference android:entries="@array/use_sensor_entries" android:title="@string/use_sensor" android:key="useSensor" android:defaultValue="none" android:entryValues="@array/use_sensor_entryvalues" />
+    <com.fastemulator.gba.settings.SeekBarPreference android:title="@string/sensor_sensitivity" android:key="sensorSensitivity" android:defaultValue="5" emu:maxValue="10" />
+    <PreferenceScreen android:title="@string/select_input_method" android:key="selectInputMethod" />
+</PreferenceScreen>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:title="@string/enable_sync" android:key="enableSync" android:summaryOff="@string/enable_sync_summary" />
+    <PreferenceScreen android:title="@string/sync_settings" android:key="syncSettings" android:dependency="enableSync" />
+    <CheckBoxPreference android:title="@string/enable_cheats" android:key="enableCheats" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/auto_patch" android:key="autoIPS" android:summary="@string/auto_patch_summary" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/auto_save" android:key="autoSave" android:summary="@string/auto_save_summary" />
+    <ListPreference android:entries="@array/fastforward_speed_entryvalues" android:title="@string/fastforward_speed" android:key="fastForwardSpeed" android:defaultValue="8x" android:entryValues="@array/fastforward_speed_entryvalues" />
+    <ListPreference android:entries="@array/fastforward_trigger_entries" android:title="@string/fastforward_trigger" android:key="fastForwardTrigger" android:summary="@string/fastforward_trigger_summary" android:defaultValue="toggle" android:entryValues="@array/fastforward_trigger_entryvalues" />
+    <CheckBoxPreference android:title="@string/confirm_on_close" android:key="confirmOnClose" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/full_screen_mode" android:key="fullScreenMode" android:summary="@string/full_screen_mode_summary" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/full_screen_immersive" android:key="fullScreenImmersive" android:summary="@string/full_screen_immersive_summary" android:dependency="fullScreenMode" />
+</PreferenceScreen>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:emu="http://schemas.fastemulator.com/emu">
+    <CheckBoxPreference android:title="@string/sync_on_start" android:key="syncOnStart" android:summary="@string/sync_on_start_summary" />
+    <CheckBoxPreference android:title="@string/sync_on_changes" android:key="syncOnChanges" android:summary="@string/sync_on_changes_summary" />
+    <com.fastemulator.gba.settings.SeekBarPreference android:title="@string/sync_periodic" android:key="syncPeriodic" android:defaultValue="2" emu:minValue="0" emu:maxValue="24" />
+</PreferenceScreen>

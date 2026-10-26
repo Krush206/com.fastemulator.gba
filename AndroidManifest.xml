@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.fastemulator.gba" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.nfc" android:required="false"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <application android:allowBackup="true" android:icon="@drawable/app_icon" android:label="@string/app_name" android:theme="@style/DarkTheme">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.fastemulator.gba.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:label="@string/launcher_shortcut_name" android:name="com.fastemulator.gba.CreateShortcuts" android:targetActivity="com.fastemulator.gba.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.fastemulator.gba.FileBrowserActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.fastemulator.gba.EmulatorActivity" android:theme="@style/DarkTheme.NoActionBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="application/x-gba-rom"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="gbalink"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/cheats" android:name="com.fastemulator.gba.CheatsActivity"/>
+        <activity android:name="com.fastemulator.gba.EditCheatActivity"/>
+        <activity android:name="com.fastemulator.gba.SaveSlotsActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/select_device" android:name="com.fastemulator.gba.BluetoothDeviceListActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:label="@string/settings" android:name="com.fastemulator.gba.settings.EmulatorSettings"/>
+        <activity android:name="com.fastemulator.gba.settings.KeyMappingSettings"/>
+        <activity android:label="@string/key_mappings" android:name="com.fastemulator.gba.settings.KeyProfilesActivity"/>
+        <activity android:name="com.fastemulator.gba.settings.LayoutEditor" android:theme="@style/DarkTheme.NoActionBar.Fullscreen"/>
+        <activity android:label="@string/screen_layouts" android:name="com.fastemulator.gba.settings.LayoutsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.fastemulator.gba.settings.SyncStatusDialogActivity"/>
+        <service android:name="com.fastemulator.gba.EmulatorService"/>
+        <service android:exported="true" android:name="com.fastemulator.gba.sync.SyncService" android:process="com.fastemulator.sync">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter"/>
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/syncadapter"/>
+        </service>
+        <service android:exported="false" android:name="com.fastemulator.gba.sync.SyncClientService" android:process="com.fastemulator.sync"/>
+        <provider android:authorities="com.fastemulator.sync.provider" android:exported="false" android:label="@string/sync_provider_name" android:name="com.fastemulator.gba.sync.StubProvider" android:syncable="true"/>
+        <meta-data android:name="xperiaplayoptimized_content" android:resource="@string/xperiaplayoptimized_content"/>
+        <meta-data android:name="game_icon" android:resource="@drawable/xperia_icon"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

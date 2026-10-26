@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:emu="http://schemas.fastemulator.com/emu">
+    <ListPreference android:entries="@array/cpu_core_entries" android:title="@string/cpu_core" android:key="cpuCore" android:defaultValue="auto" android:entryValues="@array/cpu_core_entryvalues" />
+    <CheckBoxPreference android:title="@string/use_bios" android:key="useBios" android:summary="@string/use_bios_summary" android:defaultValue="false" />
+    <CheckBoxPreference android:title="@string/boot_bios" android:key="bootBios" android:summary="@string/boot_bios_summary" android:dependency="useBios" android:defaultValue="false" />
+    <PreferenceScreen android:title="@string/bios_file" android:key="biosFile" android:dependency="useBios" />
+    <ListPreference android:entries="@array/save_type_entries" android:title="@string/save_type" android:key="saveType" android:defaultValue="auto" android:entryValues="@array/save_type_entryvalues" />
+    <com.fastemulator.gba.settings.SeekBarPreference android:title="@string/smc_check" android:key="smcCheck" android:summary="@string/smc_check_summary" android:defaultValue="2" emu:maxValue="5" />
+    <CheckBoxPreference android:title="@string/speed_hack" android:key="speedHack" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/enable_mosaic" android:key="enableMosaic" android:defaultValue="true" />
+    <PreferenceCategory android:title="@string/reset">
+        <Preference android:title="@string/reset_advanced_settings" android:key="resetAdvancedSettings" />
+    </PreferenceCategory>
+</PreferenceScreen>

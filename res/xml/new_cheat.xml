@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference android:persistent="false" android:title="@string/cheat_name" android:key="cheatName" android:inputType="textCapSentences" />
+    <ListPreference android:persistent="false" android:entries="@array/cheat_type_entries" android:title="@string/cheat_type" android:key="cheatType" android:defaultValue="auto" android:entryValues="@array/cheat_type_entryvalues" />
+    <EditTextPreference android:persistent="false" android:lines="4" android:title="@string/cheat_code" android:key="cheatCode" android:inputType="textCapCharacters|textMultiLine" />
+</PreferenceScreen>

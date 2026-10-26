@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="sync_periodic_label">
+        <item quantity="other">Every %1$d hours</item>
+        <item quantity="one">Every %1$d hour</item>
+    </plurals>
+</resources>

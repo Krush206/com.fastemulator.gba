@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cheat_type_entries">
+        <item>Auto detect</item>
+        <item>GameShark v1/v2</item>
+        <item>GameShark v3 (Action Replay)</item>
+        <item>Code Breaker</item>
+        <item>Raw code</item>
+    </string-array>
+    <string-array name="cheat_type_entryvalues">
+        <item>auto</item>
+        <item>gs1</item>
+        <item>gs3</item>
+        <item>cb</item>
+        <item>raw</item>
+    </string-array>
+    <string-array name="cpu_core_entries">
+        <item>Automatic</item>
+        <item>Dynamic recompiler</item>
+        <item>Interpreter</item>
+    </string-array>
+    <string-array name="cpu_core_entryvalues">
+        <item>auto</item>
+        <item>dynarec</item>
+        <item>interp</item>
+    </string-array>
+    <string-array name="fastforward_speed_entryvalues">
+        <item>16x</item>
+        <item>8x</item>
+        <item>4x</item>
+        <item>3x</item>
+        <item>2x</item>
+        <item>1.5x</item>
+        <item>0.5x</item>
+        <item>0.2x</item>
+    </string-array>
+    <string-array name="fastforward_trigger_entries">
+        <item>Press to toggle</item>
+        <item>Hold down to activate</item>
+    </string-array>
+    <string-array name="fastforward_trigger_entryvalues">
+        <item>toggle</item>
+        <item>hold</item>
+    </string-array>
+    <string-array name="gba_bios_filters">
+        <item>.bin</item>
+        <item>.bios</item>
+        <item>.zip</item>
+    </string-array>
+    <string-array name="gba_rom_filters">
+        <item>.gba</item>
+        <item>.bin</item>
+        <item>.zip</item>
+    </string-array>
+    <string-array name="patch_file_filters">
+        <item>.ips</item>
+        <item>.ups</item>
+    </string-array>
+    <string-array name="save_type_entries">
+        <item>Automatic</item>
+        <item>EEPROM</item>
+        <item>SRAM</item>
+        <item>Flash 64K</item>
+        <item>Flash 128K</item>
+        <item>None</item>
+    </string-array>
+    <string-array name="save_type_entryvalues">
+        <item>auto</item>
+        <item>eeprom</item>
+        <item>sram</item>
+        <item>flash-64k</item>
+        <item>flash-128k</item>
+        <item>none</item>
+    </string-array>
+    <string-array name="screen_orientation_entries">
+        <item>Auto rotate</item>
+        <item>Landscape</item>
+        <item>Reverse landscape</item>
+        <item>Portrait</item>
+        <item>System default</item>
+    </string-array>
+    <string-array name="screen_orientation_entryvalues">
+        <item>sensor</item>
+        <item>landscape</item>
+        <item>reverse_landscape</item>
+        <item>portrait</item>
+        <item>unspecified</item>
+    </string-array>
+    <string-array name="solar_emulation_entries">
+        <item>L + left/right</item>
+        <item>"Device's light sensor"</item>
+    </string-array>
+    <string-array name="solar_emulation_entryvalues">
+        <item>user_setting</item>
+        <item>light_sensor</item>
+    </string-array>
+    <string-array name="sound_frequency_entries">
+        <item>44100 Hz</item>
+        <item>22050 Hz</item>
+        <item>11025 Hz</item>
+    </string-array>
+    <string-array name="sound_frequency_entryvalues">
+        <item>44100</item>
+        <item>22050</item>
+        <item>11025</item>
+    </string-array>
+    <string-array name="use_sensor_entries">
+        <item>None</item>
+        <item>D-pad</item>
+        <item>Left/Right</item>
+        <item>Trigger Left/Right</item>
+    </string-array>
+    <string-array name="use_sensor_entryvalues">
+        <item>none</item>
+        <item>dpad</item>
+        <item>left_right</item>
+        <item>tl_tr</item>
+    </string-array>
+</resources>

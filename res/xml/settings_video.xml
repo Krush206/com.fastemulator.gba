@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:emu="http://schemas.fastemulator.com/emu">
+    <CheckBoxPreference android:title="@string/stretch_to_fit" android:key="stretchToFit" android:summary="@string/stretch_to_fit_summary" android:defaultValue="false" />
+    <PreferenceScreen android:title="@string/screen_size" android:key="screenSize" />
+    <ListPreference android:entries="@array/screen_orientation_entries" android:title="@string/screen_orientation" android:key="screenOrientation" android:defaultValue="sensor" android:entryValues="@array/screen_orientation_entryvalues" />
+    <com.fastemulator.gba.settings.SeekBarPreference android:title="@string/max_frame_skips" android:key="maxFrameSkips" android:summary="@string/max_frame_skips_summary" android:defaultValue="2" emu:maxValue="10" />
+    <CheckBoxPreference android:title="@string/enable_gl" android:key="enableGl" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/linear_filtering" android:key="linearFiltering" android:dependency="enableGl" android:defaultValue="true" />
+    <com.fastemulator.gba.settings.ShaderListPreference android:title="@string/shader" android:key="shader" android:summary="@string/shader_summary" android:dependency="enableGl" android:defaultValue="none" />
+</PreferenceScreen>

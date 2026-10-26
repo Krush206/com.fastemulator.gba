@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:emu="http://schemas.fastemulator.com/emu">
+    <CheckBoxPreference android:title="@string/enable_rumble" android:key="enableRumble" android:defaultValue="true" />
+    <com.fastemulator.gba.settings.SeekBarPreference android:title="@string/gyro_sensitivity" android:key="gyroSensitivity" android:defaultValue="5" emu:maxValue="10" />
+    <ListPreference android:entries="@array/solar_emulation_entries" android:title="@string/solar_emulation" android:key="solarEmulation" android:defaultValue="user_setting" android:entryValues="@array/solar_emulation_entryvalues" />
+    <CheckBoxPreference android:title="@string/lock_screen_orientation" android:key="lockScreenOrientation" />
+</PreferenceScreen>

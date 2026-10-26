@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:title="@string/enable_sound" android:key="enableSound" android:defaultValue="true" />
+    <com.fastemulator.gba.settings.SeekBarPreference android:title="@string/sound_volume" android:key="soundVolume" android:dependency="enableSound" android:defaultValue="100" />
+    <ListPreference android:entries="@array/sound_frequency_entries" android:title="@string/sound_frequency" android:key="soundFrequency" android:dependency="enableSound" android:defaultValue="44100" android:entryValues="@array/sound_frequency_entryvalues" />
+</PreferenceScreen>

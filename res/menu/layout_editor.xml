@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/menu_add_control" android:title="@string/add_control" />
+    <item android:id="@id/menu_reset_controls" android:title="@string/reset_controls" />
+    <item android:id="@id/menu_remove_controls" android:title="@string/remove_controls" />
+    <item android:id="@id/menu_quit" android:title="@string/close" />
+</menu>
