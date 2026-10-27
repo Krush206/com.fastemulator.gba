@@ -572,7 +572,7 @@
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .locals 2
+    .locals 1
 
     .prologue
     .line 174
@@ -580,7 +580,7 @@
 
     move-result v0
 
-    sparse-switch v0, :sswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
     .line 181
     :cond_0
@@ -588,7 +588,7 @@
     return-void
 
     .line 176
-    :sswitch_0
+    :pswitch_0
     iget-object v0, p0, Lcom/fastemulator/gba/FileBrowserActivity;->r:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->getParentFile()Ljava/io/File;
@@ -603,65 +603,19 @@
 
     goto :goto_0
 
-    .line 176
-    :sswitch_1
-    new-instance v0, Landroid/content/Intent;
-
-    const-class v1, Lcom/fastemulator/gba/settings/EmulatorSettings;
-
-    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    invoke-virtual {p0, v0}, Lcom/fastemulator/gba/FileBrowserActivity;->startActivity(Landroid/content/Intent;)V
-
-    goto :goto_0
-
     .line 174
-    :sswitch_data_0
-    .sparse-switch
-        0x7f0c0014 -> :sswitch_0
-        0x7f0c0025 -> :sswitch_1
-    .end sparse-switch
+    :pswitch_data_0
+    .packed-switch 0x7f0c0014
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 6
+    .locals 2
 
     .prologue
     .line 37
     invoke-super {p0, p1}, Lcom/fastemulator/gba/e/a;->onCreate(Landroid/os/Bundle;)V
-
-    .line 37
-    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
-    const/16 v0, 0x1e
-    if-ge v5, v0, :check_manage
-    goto :check_compat
-    :check_manage
-    invoke-static {}, Landroid/os/Environment;->isExternalStorageManager()Z
-    move-result v0
-    if-nez v0, :check_compat
-    const-string v0, "android.settings.MANAGE_APP_ALL_FILES_ACCESS_PERMISSION"
-    new-instance v1, Landroid/content/Intent;
-    invoke-direct {v1, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-    const-string v0, "package:com.fastemulator.gba"
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-    move-result-object v0
-    invoke-virtual {v1, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
-    invoke-virtual {p0, v1}, Lcom/fastemulator/gba/FileBrowserActivity;->startActivity(Landroid/content/Intent;)V
-    :check_compat
-    const/16 v0, 0x17
-    if-lt v5, v0, :skip_perm
-    const-string v0, "android.permission.READ_EXTERNAL_STORAGE"
-    invoke-virtual {p0, v0}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
-    move-result v1
-    if-eqz v1, :skip_perm
-    const/4 v0, 0x1
-    new-array v0, v0, [Ljava/lang/String;
-    const/4 v1, 0x0
-    const-string v2, "android.permission.READ_EXTERNAL_STORAGE"
-    aput-object v2, v0, v1
-    const/4 v1, 0x1
-    invoke-virtual {p0, v0, v1}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
-    :skip_perm
 
     .line 38
     const v0, 0x7f030007
@@ -686,15 +640,6 @@
 
     .line 43
     const v0, 0x7f0c0014
-
-    invoke-virtual {p0, v0}, Lcom/fastemulator/gba/FileBrowserActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 44
-    const v0, 0x7f0c0025
 
     invoke-virtual {p0, v0}, Lcom/fastemulator/gba/FileBrowserActivity;->findViewById(I)Landroid/view/View;
 
