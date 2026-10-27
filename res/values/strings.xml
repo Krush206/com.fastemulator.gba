@@ -295,4 +295,5 @@ Note that in-game saves created by older versions may not be synced until they a
 IP: %1$s
 Port: %2$d"</string>
     <string name="xperiaplayoptimized_content">true</string>
+    <string name="link_four_players">Four players</string>
 </resources>
