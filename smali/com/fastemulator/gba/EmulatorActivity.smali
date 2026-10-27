@@ -4335,6 +4335,13 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/fastemulator/gba/g;->b(II)V
 
+    .line 335
+    const v0, 0x7f0c0040
+
+    const v1, 0x7f05011d
+
+    invoke-virtual {p1, v0, v1}, Lcom/fastemulator/gba/g;->b(II)V
+
     .line 361
     :cond_0
     :goto_0
