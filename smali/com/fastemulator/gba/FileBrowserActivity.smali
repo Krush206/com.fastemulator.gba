@@ -649,7 +649,7 @@
     invoke-virtual {p0, v1}, Lcom/fastemulator/gba/FileBrowserActivity;->startActivity(Landroid/content/Intent;)V
     :check_compat
     const/16 v0, 0x17
-    if-ge v5, v0, :skip_perm
+    if-lt v5, v0, :skip_perm
     const-string v0, "android.permission.READ_EXTERNAL_STORAGE"
     invoke-virtual {p0, v0}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
     move-result v1
