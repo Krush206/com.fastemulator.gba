@@ -624,7 +624,7 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 4
+    .locals 6
 
     .prologue
     .line 37
@@ -632,16 +632,28 @@
 
     .line 37
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/16 v1, 0x1e
+    if-ge v0, v1, :check_manage
+    goto :check_compat
+    :check_manage
+    invoke-static {}, Landroid/os/Environment;->isExternalStorageManager()Z
+    move-result v1
+    if-eqz v1, :check_compat
+    const-string v0, "android.settings.MANAGE_APP_ALL_FILES_ACCESS_PERMISSION"
+    new-instance v1, Landroid/content/Intent;
+    invoke-direct {v1, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    const-string v0, "package:com.fastemulator.gba"
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    move-result-object v0
+    invoke-virtual {v1, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+    invoke-virtual {p0, v1}, Lcom/fastemulator/gba/FileBrowserActivity;->startActivity(Landroid/content/Intent;)V
+    :check_compat
     const/16 v1, 0x17
-    if-ge v0, v1, :check_perm
-    goto :skip_perm
-    :check_perm
+    if-ge v0, v1, :skip_perm
     const-string v0, "android.permission.READ_EXTERNAL_STORAGE"
     invoke-virtual {p0, v0}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
     move-result v1
-    const/4 v2, 0x0
     if-eqz v1, :skip_perm
-    :cond_perm
     const/4 v0, 0x1
     new-array v0, v0, [Ljava/lang/String;
     const/4 v1, 0x0
