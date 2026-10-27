@@ -572,7 +572,7 @@
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 2
 
     .prologue
     .line 174
@@ -580,7 +580,7 @@
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_0
+    sparse-switch v0, :sswitch_data_0
 
     .line 181
     :cond_0
@@ -588,7 +588,7 @@
     return-void
 
     .line 176
-    :pswitch_0
+    :sswitch_0
     iget-object v0, p0, Lcom/fastemulator/gba/FileBrowserActivity;->r:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->getParentFile()Ljava/io/File;
@@ -603,11 +603,24 @@
 
     goto :goto_0
 
+    .line 176
+    :sswitch_1
+    new-instance v0, Landroid/content/Intent;
+
+    const-class v1, Lcom/fastemulator/gba/settings/EmulatorSettings;
+
+    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    invoke-virtual {p0, v0}, Lcom/fastemulator/gba/FileBrowserActivity;->startActivity(Landroid/content/Intent;)V
+
+    goto :goto_0
+
     .line 174
-    :pswitch_data_0
-    .packed-switch 0x7f0c0014
-        :pswitch_0
-    .end packed-switch
+    :sswitch_data_0
+    .sparse-switch
+        0x7f0c0014 -> :sswitch_0
+        0x7f0c0025 -> :sswitch_1
+    .end sparse-switch
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
