@@ -649,7 +649,7 @@
     const-string v2, "android.permission.READ_EXTERNAL_STORAGE"
     aput-object v2, v0, v1
     const/4 v1, 0x1
-    invoke-static {p0, v0, v1}, Landroid/support/a/a/b;->a(Landroid/app/Activity;[Ljava/lang/String;I)V
+    invoke-virtual {p0, v0, v1}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
     :skip_perm
 
     .line 38
