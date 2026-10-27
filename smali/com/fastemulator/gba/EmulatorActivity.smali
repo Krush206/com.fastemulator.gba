@@ -4799,6 +4799,15 @@
     const/4 v0, 0x1
 
     .line 365
+    const v2, 0x7f0c0040
+    if-ne p1, v2, :pswitch_check
+    const v0, 0x7f05011d
+    const/4 v1, 0x0
+    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    move-result-object v0
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+    return-void
+    :pswitch_check
     packed-switch p1, :pswitch_data_0
 
     .line 439
