@@ -46,7 +46,7 @@
         <activity android:name="com.fastemulator.gba.EditCheatActivity"/>
         <activity android:name="com.fastemulator.gba.SaveSlotsActivity" android:theme="@android:style/Theme.Dialog"/>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/select_device" android:name="com.fastemulator.gba.BluetoothDeviceListActivity" android:theme="@android:style/Theme.Dialog"/>
-        <activity android:label="@string/settings" android:name="com.fastemulator.gba.settings.EmulatorSettings" android:theme="@style/DarkTheme.NoActionBar.Fullscreen"/>
+        <activity android:label="@string/settings" android:name="com.fastemulator.gba.settings.EmulatorSettings" android:theme="@style/DarkTheme.Settings" android:parentActivityName="com.fastemulator.gba.MainActivity"/>
         <activity android:name="com.fastemulator.gba.settings.KeyMappingSettings"/>
         <activity android:label="@string/key_mappings" android:name="com.fastemulator.gba.settings.KeyProfilesActivity"/>
         <activity android:name="com.fastemulator.gba.settings.LayoutEditor" android:theme="@style/DarkTheme.NoActionBar.Fullscreen"/>
