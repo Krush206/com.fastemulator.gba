@@ -166,7 +166,6 @@ Note that in-game saves created by older versions may not be synced until they a
     <string name="link_load_rom_message">"In order to link up two different games,  you must have both game files on both devices. Choose 'Locate game'  to tell My Boy! where the other game is on your device."</string>
     <string name="link_local">Link local</string>
     <string name="link_remote">Link remote</string>
-    <string name="link_four_players">Four players</string>
     <string name="load_bios_failed">Load BIOS failed.</string>
     <string name="load_rom">Load game</string>
     <string name="load_rom_failed">Unrecognized GBA file.</string>
