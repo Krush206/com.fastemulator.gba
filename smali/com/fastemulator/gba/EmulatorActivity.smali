@@ -4793,7 +4793,7 @@
 .end method
 
 .method public c(I)V
-    .locals 3
+    .locals 5
 
     .prologue
     const/4 v0, 0x1
@@ -4802,16 +4802,26 @@
     const v2, 0x7f0c0040
     if-ne p1, v2, :pswitch_check
     iget-object v0, p0, Lcom/fastemulator/gba/EmulatorActivity;->u:Landroid/content/SharedPreferences;
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-    move-result-object v0
     const-string v1, "linkPlayers"
-    const/4 v2, 0x4
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-    move-result-object v0
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-    const v0, 0x7f05011d
+    const/4 v2, 0x2
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    move-result v0
+    const/4 v1, 0x2
+    sub-int v0, v0, v1
+    add-int/lit8 v0, v0, 0x1
+    const/4 v1, 0x3
+    rem-int v0, v0, v1
+    add-int/lit8 v0, v0, 0x2
+    iget-object v1, p0, Lcom/fastemulator/gba/EmulatorActivity;->u:Landroid/content/SharedPreferences;
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    move-result-object v1
+    const-string v2, "linkPlayers"
+    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    move-result-object v1
+    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
+    const-string v0, "Link players toggled"
     const/4 v1, 0x0
-    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
     move-result-object v0
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
     return-void
