@@ -638,7 +638,7 @@
     :check_manage
     invoke-static {}, Landroid/os/Environment;->isExternalStorageManager()Z
     move-result v0
-    if-eqz v0, :check_compat
+    if-nez v0, :check_compat
     const-string v0, "android.settings.MANAGE_APP_ALL_FILES_ACCESS_PERMISSION"
     new-instance v1, Landroid/content/Intent;
     invoke-direct {v1, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
