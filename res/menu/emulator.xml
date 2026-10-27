@@ -13,7 +13,6 @@
             <item android:id="@id/menu_wifi_client" android:title="@string/wifi_client" />
             <item android:id="@id/menu_bluetooth_server" android:title="@string/bluetooth_server" />
             <item android:id="@id/menu_bluetooth_client" android:title="@string/bluetooth_client" />
-            <item android:id="@id/menu_four_players" android:title="@string/link_four_players" />
         </menu>
     </item>
     <item android:id="@id/menu_link_local" android:title="@string/link_local" />
