@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="@android:style/Theme.DeviceDefault.Light.DarkActionBar">
+    <style name="AppTheme" parent="@android:style/Theme.NoTitleBar.Fullscreen">
         <item name="android:windowBackground">#ff000000</item>
         <item name="android:statusBarColor">#ff000000</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:windowFullscreen">true</item>
     </style>
-    <style name="DarkTheme" parent="@android:style/Theme.DeviceDefault.Light.DarkActionBar">
+    <style name="DarkTheme" parent="@android:style/Theme.NoTitleBar.Fullscreen">
         <item name="android:windowBackground">#ff000000</item>
         <item name="android:statusBarColor">#ff000000</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:windowFullscreen">true</item>
     </style>
     <style name="DarkTheme.NoActionBar" parent="@style/DarkTheme">
         <item name="android:windowActionBar">false</item>
