@@ -624,11 +624,33 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 2
+    .locals 4
 
     .prologue
     .line 37
     invoke-super {p0, p1}, Lcom/fastemulator/gba/e/a;->onCreate(Landroid/os/Bundle;)V
+
+    .line 37
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/16 v1, 0x17
+    if-ge v0, v1, :check_perm
+    goto :skip_perm
+    :check_perm
+    const-string v0, "android.permission.READ_EXTERNAL_STORAGE"
+    invoke-virtual {p0, v0}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
+    move-result v1
+    const/4 v2, 0x0
+    if-ne v1, v2, :cond_perm
+    goto :skip_perm
+    :cond_perm
+    const/4 v0, 0x1
+    new-array v0, v0, [Ljava/lang/String;
+    const/4 v1, 0x0
+    const-string v2, "android.permission.READ_EXTERNAL_STORAGE"
+    aput-object v2, v0, v1
+    const/4 v1, 0x1
+    invoke-static {p0, v0, v1}, Landroid/support/a/a/b;->a(Landroid/app/Activity;[Ljava/lang/String;I)V
+    :skip_perm
 
     .line 38
     const v0, 0x7f030007
