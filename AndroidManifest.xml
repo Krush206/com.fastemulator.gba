@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.fastemulator.gba" platformBuildVersionCode="35" platformBuildVersionName="15">
-    <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="35"/>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.fastemulator.gba" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
     <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
     <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
     <uses-feature android:name="android.hardware.wifi" android:required="false"/>
     <uses-feature android:name="android.hardware.nfc" android:required="false"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28"/>
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
-    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
-    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
@@ -19,23 +13,23 @@
     <uses-permission android:name="android.permission.NFC"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
-    <meta-data android:name="android.support.VERSION" android:value="33.1.0"/>
-    <application android:allowBackup="true" android:icon="@drawable/app_icon" android:label="@string/app_name" android:theme="@style/DarkTheme" android:requestLegacyExternalStorage="true">
-        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.fastemulator.gba.MainActivity" android:theme="@style/DarkTheme" android:exported="true">
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <application android:allowBackup="true" android:icon="@drawable/app_icon" android:label="@string/app_name" android:theme="@style/DarkTheme">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.fastemulator.gba.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity-alias android:label="@string/launcher_shortcut_name" android:name="com.fastemulator.gba.CreateShortcuts" android:targetActivity="com.fastemulator.gba.MainActivity" android:exported="true">
+        <activity-alias android:label="@string/launcher_shortcut_name" android:name="com.fastemulator.gba.CreateShortcuts" android:targetActivity="com.fastemulator.gba.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity-alias>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.fastemulator.gba.FileBrowserActivity"/>
-        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.fastemulator.gba.EmulatorActivity" android:theme="@style/DarkTheme.NoActionBar.Fullscreen" android:exported="true">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.fastemulator.gba.EmulatorActivity" android:theme="@style/DarkTheme.NoActionBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -52,11 +46,11 @@
         <activity android:name="com.fastemulator.gba.EditCheatActivity"/>
         <activity android:name="com.fastemulator.gba.SaveSlotsActivity" android:theme="@android:style/Theme.Dialog"/>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/select_device" android:name="com.fastemulator.gba.BluetoothDeviceListActivity" android:theme="@android:style/Theme.Dialog"/>
-        <activity android:label="@string/settings" android:name="com.fastemulator.gba.settings.EmulatorSettings" android:theme="@style/DarkTheme.Settings" android:parentActivityName="com.fastemulator.gba.MainActivity"/>
-        <activity android:name="com.fastemulator.gba.settings.KeyMappingSettings" android:theme="@style/DarkTheme.Settings" android:parentActivityName="com.fastemulator.gba.settings.EmulatorSettings"/>
-        <activity android:label="@string/key_mappings" android:name="com.fastemulator.gba.settings.KeyProfilesActivity" android:theme="@style/DarkTheme.Settings" android:parentActivityName="com.fastemulator.gba.settings.EmulatorSettings"/>
-        <activity android:name="com.fastemulator.gba.settings.LayoutEditor" android:theme="@style/DarkTheme.Settings" android:parentActivityName="com.fastemulator.gba.settings.LayoutsActivity"/>
-        <activity android:label="@string/screen_layouts" android:name="com.fastemulator.gba.settings.LayoutsActivity" android:theme="@style/DarkTheme.Settings" android:parentActivityName="com.fastemulator.gba.settings.EmulatorSettings"/>
+        <activity android:label="@string/settings" android:name="com.fastemulator.gba.settings.EmulatorSettings"/>
+        <activity android:name="com.fastemulator.gba.settings.KeyMappingSettings"/>
+        <activity android:label="@string/key_mappings" android:name="com.fastemulator.gba.settings.KeyProfilesActivity"/>
+        <activity android:name="com.fastemulator.gba.settings.LayoutEditor" android:theme="@style/DarkTheme.NoActionBar.Fullscreen"/>
+        <activity android:label="@string/screen_layouts" android:name="com.fastemulator.gba.settings.LayoutsActivity"/>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.fastemulator.gba.settings.SyncStatusDialogActivity"/>
         <service android:name="com.fastemulator.gba.EmulatorService"/>
         <service android:exported="true" android:name="com.fastemulator.gba.sync.SyncService" android:process="com.fastemulator.sync">
