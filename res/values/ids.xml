@@ -64,4 +64,5 @@
     <id name="menu_new_profile" />
     <id name="menu_edit_profile" />
     <id name="menu_delete_profile" />
+    <id name="menu_four_players" />
 </resources>
