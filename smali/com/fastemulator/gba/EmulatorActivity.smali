@@ -4338,8 +4338,23 @@
     .line 335
     const v0, 0x7f0c0040
 
-    const v1, 0x7f05011d
-
+    iget-object v3, p0, Lcom/fastemulator/gba/EmulatorActivity;->u:Landroid/content/SharedPreferences;
+    const-string v4, "linkPlayers"
+    const/4 v5, 0x2
+    invoke-interface {v3, v4, v5}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    move-result v3
+    const/4 v4, 0x2
+    if-eq v3, v4, :link_players_2
+    const/4 v4, 0x3
+    if-eq v3, v4, :link_players_3
+    const v1, 0x7f050120
+    goto :link_players_set
+    :link_players_3
+    const v1, 0x7f05011f
+    goto :link_players_set
+    :link_players_2
+    const v1, 0x7f05011e
+    :link_players_set
     invoke-virtual {p1, v0, v1}, Lcom/fastemulator/gba/g;->b(II)V
 
     .line 361
@@ -4819,9 +4834,15 @@
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
     move-result-object v1
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
-    const-string v0, "Link players toggled"
-    const/4 v1, 0x0
-    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v2, "Link players: "
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v1
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
+    const/4 v2, 0x0
+    invoke-static {p0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
     move-result-object v0
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
     return-void
