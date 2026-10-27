@@ -660,6 +660,15 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    .line 44
+    const v0, 0x7f0c0025
+
+    invoke-virtual {p0, v0}, Lcom/fastemulator/gba/FileBrowserActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
     .line 45
     invoke-virtual {p0}, Lcom/fastemulator/gba/FileBrowserActivity;->getIntent()Landroid/content/Intent;
 
