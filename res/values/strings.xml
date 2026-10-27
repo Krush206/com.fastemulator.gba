@@ -296,4 +296,7 @@ IP: %1$s
 Port: %2$d"</string>
     <string name="xperiaplayoptimized_content">true</string>
     <string name="link_four_players">Four players</string>
+    <string name="link_players_2">Link players: 2</string>
+    <string name="link_players_3">Link players: 3</string>
+    <string name="link_players_4">Link players: 4</string>
 </resources>
