@@ -4801,6 +4801,14 @@
     .line 365
     const v2, 0x7f0c0040
     if-ne p1, v2, :pswitch_check
+    iget-object v0, p0, Lcom/fastemulator/gba/EmulatorActivity;->u:Landroid/content/SharedPreferences;
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    move-result-object v0
+    const-string v1, "linkPlayers"
+    const/4 v2, 0x4
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    move-result-object v0
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
     const v0, 0x7f05011d
     const/4 v1, 0x0
     invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
