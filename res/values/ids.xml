@@ -44,6 +44,7 @@
     <id name="menu_bluetooth_server" />
     <id name="menu_bluetooth_client" />
     <id name="menu_link_local" />
+    <id name="menu_four_players" />
     <id name="menu_screenshot" />
     <id name="menu_reset" />
     <id name="menu_link_disconnect" />
