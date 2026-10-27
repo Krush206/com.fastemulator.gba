@@ -640,8 +640,7 @@
     invoke-virtual {p0, v0}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
     move-result v1
     const/4 v2, 0x0
-    if-ne v1, v2, :cond_perm
-    goto :skip_perm
+    if-eqz v1, :skip_perm
     :cond_perm
     const/4 v0, 0x1
     new-array v0, v0, [Ljava/lang/String;
