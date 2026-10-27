@@ -633,7 +633,9 @@
     .line 37
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
     const/16 v0, 0x1e
-    if-ge v5, v0, :check_compat
+    if-lt v5, v0, :check_manage
+    goto :check_compat
+    :check_manage
     invoke-static {}, Landroid/os/Environment;->isExternalStorageManager()Z
     move-result v0
     if-eqz v0, :check_compat
