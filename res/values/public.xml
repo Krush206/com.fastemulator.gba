@@ -354,6 +354,7 @@
     <public type="string" name="wifi_server" id="0x7f05011a" />
     <public type="string" name="wifi_server_listening" id="0x7f05011b" />
     <public type="string" name="xperiaplayoptimized_content" id="0x7f05011c" />
+    <public type="string" name="link_four_players" id="0x7f05011d" />
     <public type="style" name="DarkTheme" id="0x7f060000" />
     <public type="style" name="DarkTheme.NoActionBar" id="0x7f060001" />
     <public type="style" name="DarkTheme.NoActionBar.Fullscreen" id="0x7f060002" />
